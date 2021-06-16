@@ -14,9 +14,9 @@ class RegisterUserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('_user_register')->insert([
+        DB::table('users')->insert([
             'name'=>'Test Test',
-            'email'=>'test@gmail.com',
+            'email'=>'pkaurp23@gmail.com',
             'password'=>Hash::make('12345')
         ]);
     }
