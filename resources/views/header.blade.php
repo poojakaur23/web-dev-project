@@ -1,6 +1,11 @@
 <?php
 use App\Http\Controllers\ProductController;
-$totalCart=ProductController::cartItem();
+$totalCart=0;
+if(Session::has('user'))
+{
+  $totalCart=ProductController::cartItem();
+}
+
 ?>
 
 <!-- Navbar -->
@@ -24,7 +29,7 @@ $totalCart=ProductController::cartItem();
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Navbar brand -->
         {{-- Logo image --}}
-        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+        <a class="navbar-brand mt-2 mt-lg-0" href="/">
           <img
             src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png"
             height="15"
@@ -35,7 +40,7 @@ $totalCart=ProductController::cartItem();
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link active" href="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Products</a>
@@ -64,6 +69,7 @@ $totalCart=ProductController::cartItem();
           data-mdb-toggle="dropdown"
           aria-expanded="false"
         >
+       
           <img
             src="https://mdbootstrap.com/img/new/avatars/2.jpg"
             class="rounded-circle"
@@ -71,21 +77,27 @@ $totalCart=ProductController::cartItem();
             alt=""
             loading="lazy"
           />
+          @if(Session::has('user'))
+          {{Session::get('user')['name']}}
+          @endif
         </a>
+       
         <ul
           class="dropdown-menu dropdown-menu-end"
           aria-labelledby="navbarDropdownMenuLink"
         >
+        @if(Session::has('user'))
           <li>
-            <a class="dropdown-item" href="#">My profile</a>
+            <a class="dropdown-item" href="/logout">Logout</a>
           </li>
-          <li>
-            <a class="dropdown-item" href="#">Settings</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Logout</a>
-          </li>
+        @else
+        <li>
+          <a class="dropdown-item" href="/login">Login</a>
+        </li>
+        @endif
+
         </ul>
+        
       </div>
       <!-- Right elements -->
     </div>
