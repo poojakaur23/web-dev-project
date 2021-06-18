@@ -66,6 +66,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+<br>
 <!-- Carousel wrapper -->
 <div class="trending-wrapper">
     <h3>Trending products</h3>
@@ -89,6 +90,8 @@
     @endforeach
     
       
+   
 </div>
+<br><br>
 </div>
 @endsection
