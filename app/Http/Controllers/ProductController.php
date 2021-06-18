@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Cart;
+use Session;
+
 class ProductController extends Controller
 {
     //
@@ -35,5 +37,9 @@ class ProductController extends Controller
 
         $data=Product::where('name','like','%'.$req->input('query').'%')->get();
         return view('search',['products'=>$data]);
+    }
+    static function cartItem(){
+        $userId=Session::get('user')['id']; 
+        return Cart::where('user_id',$userId)->count();
     }
 }
