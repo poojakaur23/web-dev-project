@@ -85,5 +85,20 @@
     .detail-img{
         height: 500px;
     }
+    .badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+#lblCartCount {
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px; 
+}
 </style>
 </html>
