@@ -112,6 +112,9 @@ if(Session::has('user'))
         <li>
           <a class="dropdown-item" href="/login">Login</a>
         </li>
+        <li>
+          <a class="dropdown-item" href="/register">Register</a>
+        </li>
         @endif
 
         </ul>
