@@ -4,8 +4,8 @@
 <div class="container custom-product">
      <div class="col-sm-10">
         <div class="trending-wrapper">
-            <h4>Result for Products</h4>
-            <a class="btn btn-success" href="ordernow">Order Now</a> <br> <br>
+            <h4>Result for Products</h4><br><br>
+            <a class="btn btn-success" href="ordernow">Place Order</a> <br> <br>
             @foreach($products as $item)
             <div class="card mb-3 cart-list-devider" style="max-height: 200px;">
               <div class="row no-gutters">
@@ -19,7 +19,7 @@
                   </div>
                 </div>
                 <div class="col-sm-2">
-                  <a href="/removecart/" class="btn btn-warning" >Remove to Cart</a>
+                  <a href="/removecart/{{$item->cart_id}}" class="btn btn-warning" >Remove to Cart</a>
                </div>
               </div>
             </div>
