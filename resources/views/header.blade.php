@@ -50,13 +50,31 @@ if(Session::has('user'))
           </li>
         </ul>
         <!-- Left links -->
+
       </div>
       <!-- Collapsible wrapper -->
-  
+
+
       <!-- Right elements -->
       <div class="d-flex align-items-center">
+        <form class="row row-cols-lg-auto g-3 align-items-center" action="/search">
+          <div class="col-12">
+                 <div class="input-group">
+              <input
+                type="text"
+                class="form-control search-box"
+                id="inlineFormInputGroupUsername"
+                placeholder="Search"
+                name="query"
+              />
+            </div>
+          </div>      
+           <div class="col-12">
+            <button type="submit" class="btn btn-search">Search</button>
+          </div>
+        </form>
         <!-- Icon -->
-        <a class="text-reset me-3" href="#">
+        <a class="text-reset me-3" href="/cart_list">
           <i class="fas fa-shopping-cart"></i>       
         <span class='badge badge-warning' id='lblCartCount'> {{$totalCart}} </span>
         </a>
@@ -104,3 +122,5 @@ if(Session::has('user'))
     <!-- Container wrapper -->
   </nav>
   <!-- Navbar -->
+
+ 
