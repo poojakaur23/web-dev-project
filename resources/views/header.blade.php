@@ -7,123 +7,122 @@ if(Session::has('user'))
 }
 
 ?>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-      <!-- Toggle button -->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-mdb-toggle="collapse"
-        data-mdb-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
-  
-      <!-- Collapsible wrapper -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- Navbar brand -->
-        {{-- Logo image --}}
-        <a class="navbar-brand mt-2 mt-lg-0" href="/">
-          <img
-            src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png"
-            height="15"
-            alt=""
-            loading="lazy"
-          />
-        </a>
-        <!-- Left links -->
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/myorders">Orders</a>
-          </li>
-        </ul>
-        <!-- Left links -->
-
-      </div>
-      <!-- Collapsible wrapper -->
-
-
-      <!-- Right elements -->
-      <div class="d-flex align-items-center">
-        <form class="row row-cols-lg-auto g-3 align-items-center" action="/search">
-          <div class="col-12">
-                 <div class="input-group">
-              <input
-                type="text"
-                class="form-control search-box"
-                id="inlineFormInputGroupUsername"
-                placeholder="Search"
-                name="query"
-              />
-            </div>
-          </div>      
-           <div class="col-12">
-            <button type="submit" class="btn btn-search">Search</button>
+  <!-- Navbar -->    <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+      <div class="container text-light">
+          <div class="w-100 d-flex justify-content-between">
+              <div>
+                  <i class="fa fa-envelope mx-2"></i>
+                  <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                  <i class="fa fa-phone mx-2"></i>
+                  <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+              </div>
+              <div>
+                  <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                  <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                  <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+                  <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+              </div>
           </div>
-        </form>
-        <!-- Icon -->
-        <a class="text-reset me-3" href="/cart_list">
-          <i class="fas fa-shopping-cart"></i>       
-        <span class='badge badge-warning' id='lblCartCount'> {{$totalCart}} </span>
-        </a>
-        <!-- Avatar -->
-        <a
-          class="dropdown-toggle d-flex align-items-center hidden-arrow"
-          href="#"
-          id="navbarDropdownMenuLink"
-          role="button"
-          data-mdb-toggle="dropdown"
-          aria-expanded="false"
-        >
-       
-          <img
-            src="https://mdbootstrap.com/img/new/avatars/2.jpg"
-            class="rounded-circle"
-            height="25"
-            alt=""
-            loading="lazy"
-          />
-          @if(Session::has('user'))
-          {{Session::get('user')['name']}}
-          @endif
-        </a>
-       
-        <ul
-          class="dropdown-menu dropdown-menu-end"
-          aria-labelledby="navbarDropdownMenuLink"
-        >
-        @if(Session::has('user'))
-          <li>
-            <a class="dropdown-item" href="/logout">Logout</a>
-          </li>
-        @else
-        <li>
-          <a class="dropdown-item" href="/login">Login</a>
-        </li>
-        <li>
-          <a class="dropdown-item" href="/register">Register</a>
-        </li>
-        @endif
-
-        </ul>
-        
       </div>
-      <!-- Right elements -->
-    </div>
-    <!-- Container wrapper -->
   </nav>
-  <!-- Navbar -->
+  <!-- Close Top Nav -->
 
- 
+
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-light shadow">
+      <div class="container d-flex justify-content-between align-items-center">
+
+          <a class="navbar-brand text-success logo h1 align-self-center" href="/">
+              Zay
+          </a>
+
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+              <div class="flex-fill">
+                  <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                      <li class="nav-item">
+                          <a class="nav-link" href="/">Home</a>
+                      </li>
+                     
+                      <li class="nav-item">
+                          <a class="nav-link" href="/myorders">Orders</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/aboutus">Contact</a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="nav navbar-nav navbar-right">
+                  <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+
+                    <form class="search-form" action="/search" id="search">
+                      <div class="input-group form-group has-feedback">
+                          <input type="search" name="query"  class="form-control"  id="search"  placeholder="Search ...">
+                          <div class="input-group-text">
+                            <button type="submit" class="input-group-text bg-success text-light"><i class="fa fa-fw fa-search"></i></button>
+                          </div>
+                      </div>
+                    </form>
+                  </div>
+                  <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                      <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                  </a>
+                  <a class="nav-icon position-relative text-decoration-none" href="/cart_list">
+                      <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                      <span  id='lblCartCount' class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{{$totalCart}}</span>
+                  </a>
+
+                        <div class="dropdown">
+                          <button class="btn  dropdown-toggle d-flex align-items-center hidden-arrow decoration-none" type="button" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-fw fa-user text-dark mr-3"></i>
+                          <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                                  @if(Session::has('user'))
+                                    
+                                      <a class="dropdown-item" href="/logout">Logout</a>
+                               
+                                  @else
+                                 
+                                    <a class="dropdown-item" href="/login">Login</a>
+                                 
+                                    <a class="dropdown-item" href="/register">Register</a>
+                                 
+                                  @endif
+                                
+
+                          </div>
+                        </div>
+                     
+              </div>
+          </div>
+
+      </div>
+  </nav>
+          <!-- Modal -->
+          <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="w-100 pt-1 mb-5 text-right">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="/search" method="get" class="modal-content modal-body border-0 p-0">
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control" id="inputModalSearch" name="query" placeholder="Search ...">
+                        <button type="submit" class="input-group-text bg-success text-light">
+                            <i class="fa fa-fw fa-search text-white"></i>
+                        </button>
+                        
+                    </div>
+                   
+                    
+                </form>
+            </div>
+        </div>
+
+        
+           
