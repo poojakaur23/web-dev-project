@@ -35,8 +35,16 @@ class ProductController extends Controller
         }
        
     }
-    function search(Request $req){
+    public function search(Request $req){
         //return $req->input();
+        //if($req->has('q')){
+           // $q=$req->q;
+           // $result=Product::where('name','like','%'.$q.'%')->get();
+           // return response()->json(['data'=>$result]);
+      //  }else{
+           // $data=Product::where('name','like','%'.$req->input('query').'%')->get();
+            //return view('search',['products'=>$data]);
+       // }
         $data=Product::where('name','like','%'.$req->input('query').'%')->get();
         return view('search',['products'=>$data]);
     }
@@ -44,7 +52,9 @@ class ProductController extends Controller
         $userId=Session::get('user')['id']; 
         return Cart::where('user_id',$userId)->count();
     }
-    function cartList(){
+    function cartList(Request $req){
+        if($req->session()->has('user'))
+        {
         $userId=Session::get('user')['id'];
         $products=DB::table('cart')
         ->join('products','cart.product_id','=','products.id')
@@ -53,13 +63,19 @@ class ProductController extends Controller
         ->get();
 
         return view('cart_list',['products'=>$products]);
+    }else
+    {
+        return redirect('/login');
+    }
 
     }
     function removeCart($id){
         Cart::destroy($id);
         return redirect('cart_list');
     }
-    function orderNow(){
+    function orderNow(Request $req){
+        if($req->session()->has('user'))
+        {
         $userId=Session::get('user')['id'];
          $total=DB::table('cart')
         ->join('products','cart.product_id','=','products.id')
@@ -68,6 +84,10 @@ class ProductController extends Controller
         ->sum('products.price');
 
         return view('ordernow',['total'=>$total]);
+    }else
+    {
+        return redirect('/login');
+    }
     }
     function place_order(Request $req)
     {
@@ -92,8 +112,10 @@ class ProductController extends Controller
           $req->input();
          return redirect('/');
     }
-    function myOrders()
+    function myOrders(Request $req)
     {
+        if($req->session()->has('user'))
+        {
         $userId=Session::get('user')['id'];
         $orders= DB::table('orders')
          ->join('products','orders.product_id','=','products.id')
@@ -101,5 +123,30 @@ class ProductController extends Controller
          ->get();
  
          return view('myorders',['orders'=>$orders]);
+         
+        }else
+        {
+            return redirect('/login');
+        }
     }
+    
+    function autocomplete(Request $request)
+    {
+     if($request->get('query'))
+     {
+      $query = $request->get('query');
+      $data = Product::where('name','like','%'.$req->input('query').'%')->get();
+      $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
+      foreach($data as $row)
+      {
+       $output .= '
+       <li><a href="#">'.$row->country_name.'</a></li>
+       ';
+      }
+      $output .= '</ul>';
+      echo $output;
+     }
+    }
+
+
 }

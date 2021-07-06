@@ -1,126 +1,92 @@
-<!-- Footer -->
-<footer style="clear:both;" class="text-center text-lg-start bg-light text-muted">
-    <!-- Section: Social media -->
-    <section
-      class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-    >
-      <!-- Left -->
-      <div class="me-5 d-none d-lg-block">
-        <span>Get connected with us on social networks:</span>
+<footer class="bg-dark" id="tempaltemo_footer">
+  <div class="container">
+      <div class="row">
+
+          <div class="col-md-4 pt-5">
+              <h2 class="h2 text-success border-bottom pb-3 border-light logo">Zay Shop</h2>
+              <ul class="list-unstyled text-light footer-link-list">
+                  <li>
+                      <i class="fas fa-map-marker-alt fa-fw"></i>
+                      123 Consectetur at ligula 10660
+                  </li>
+                  <li>
+                      <i class="fa fa-phone fa-fw"></i>
+                      <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                  </li>
+                  <li>
+                      <i class="fa fa-envelope fa-fw"></i>
+                      <a class="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                  </li>
+              </ul>
+          </div>
+
+          <div class="col-md-4 pt-5">
+              <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
+              <ul class="list-unstyled text-light footer-link-list">
+                  <li><a class="text-decoration-none" href="#">Luxury</a></li>
+                  <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
+                  <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
+                  <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
+                  <li><a class="text-decoration-none" href="#">Popular Dress</a></li>
+                  <li><a class="text-decoration-none" href="#">Gym Accessories</a></li>
+                  <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
+              </ul>
+          </div>
+
+          <div class="col-md-4 pt-5">
+              <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
+              <ul class="list-unstyled text-light footer-link-list">
+                  <li><a class="text-decoration-none" href="#">Home</a></li>
+                  <li><a class="text-decoration-none" href="#">About Us</a></li>
+                  <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
+                  <li><a class="text-decoration-none" href="#">FAQs</a></li>
+                  <li><a class="text-decoration-none" href="#">Contact</a></li>
+              </ul>
+          </div>
+
       </div>
-      <!-- Left -->
-  
-      <!-- Right -->
-      <div>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-github"></i>
-        </a>
+
+      <div class="row text-light mb-4">
+          <div class="col-12 mb-3">
+              <div class="w-100 my-3 border-top border-light"></div>
+          </div>
+          <div class="col-auto me-auto">
+              <ul class="list-inline text-left footer-icons">
+                  <li class="list-inline-item border border-light rounded-circle text-center">
+                      <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                  </li>
+                  <li class="list-inline-item border border-light rounded-circle text-center">
+                      <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                  </li>
+                  <li class="list-inline-item border border-light rounded-circle text-center">
+                      <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                  </li>
+                  <li class="list-inline-item border border-light rounded-circle text-center">
+                      <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                  </li>
+              </ul>
+          </div>
+          <div class="col-auto">
+              <label class="sr-only" for="subscribeEmail">Email address</label>
+              <div class="input-group mb-2">
+                  <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
+                  <div class="input-group-text btn-success text-light">Subscribe</div>
+              </div>
+          </div>
       </div>
-      <!-- Right -->
-    </section>
-    <!-- Section: Social media -->
-  
-    <!-- Section: Links  -->
-    <section class="">
-      <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
-        <div class="row mt-3">
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3"></i>Company name
-            </h6>
-            <p>
-              Here you can use rows and columns to organize your footer content. Lorem ipsum
-              dolor sit amet, consectetur adipisicing elit.
-            </p>
+  </div>
+
+  <div class="w-100 bg-black py-3">
+      <div class="container">
+          <div class="row pt-2">
+              <div class="col-12">
+                  <p class="text-left text-light">
+                      Copyright &copy; 2021 Company Name 
+                      | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                  </p>
+              </div>
           </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Products
-            </h6>
-            <p>
-              <a href="#!" class="text-reset">Angular</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">React</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Vue</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Laravel</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Useful links
-            </h6>
-            <p>
-              <a href="#!" class="text-reset">Pricing</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Settings</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Orders</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Help</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Contact
-            </h6>
-            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-            <p>
-              <i class="fas fa-envelope me-3"></i>
-              info@example.com
-            </p>
-            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
       </div>
-    </section>
-    <!-- Section: Links  -->
-  
-    <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2021 Copyright:
-      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
+  </div>
+
+</footer>

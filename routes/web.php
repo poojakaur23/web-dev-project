@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User_registerController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AutocompleteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +17,9 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/login', function () {
     return view('login');
+});
+Route::get('/aboutus', function () {
+    return view('aboutus');
 });
 Route::get('/logout', function () {
     Session::forget('user');
@@ -34,3 +38,4 @@ Route::post("placeOrder",[ProductController::class ,'place_order']);
 Route::get("myorders",[ProductController::class ,'myOrders']);
 Route::view('/register','register');
 Route::post("/register",[User_registerController::class ,'register']);
+Route::get('autocomplete', [AutocompleteController::class, 'autocomplete'])->name('autocomplete');

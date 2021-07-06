@@ -1,97 +1,68 @@
 @extends('master')
 @section("content")
-<div class="container custom-product">
-<!-- Carousel wrapper -->
-<div
-  id="carouselBasicExample"
-  class="carousel slide carousel-fade"
-  data-mdb-ride="carousel"
->
-  <!-- Indicators -->
 
-  <div class="carousel-indicators ">
-    @foreach( $products as $item )
-    <button
-      type="button"
-      data-mdb-target="#carouselBasicExample"
-      data-mdb-slide-to="{{ $loop->index }} "
-      class="{{ $loop->first ? 'active' : '' }}"
-      aria-current="true"
-      aria-label="Slide 1"
-    ></button>
-
-    @endforeach
-  </div>
+    <!-- Start Banner Hero -->
+    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+      <ol class="carousel-indicators">
+      @foreach( $products as $item )
+          <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="{{ $loop->index }} " class="{{ $loop->first ? 'active' : '' }}"></li>
+          @endforeach
+      </ol>
+       <!-- Inner -->
 
   <!-- Inner -->
-  <div class="carousel-inner">
-    @foreach ($products as $item)
-        <!-- Single item -->
-        <div class="carousel-item {{$item['id']==1?'active':' '}}">
-            <a href="detail/{{$item['id']}}">
-                <img
-                src="{{$item['gallery']}}"
-                class="slider-img"
-                //alt="..."
-              />
-              <div class="carousel-caption slider-text">
-                <h5 >{{$item['name']}}</h5>
-                <p>{{$item['description']}}</p>
-              </div>
-            </a>
-          </div>
-    @endforeach
-
-
-  </div>
-  <!-- Inner -->
-
-  <!-- Controls -->
-  <button
-    class="carousel-control-prev"
-    type="button"
-    data-mdb-target="#carouselBasicExample"
-    data-mdb-slide="prev"
-  >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button
-    class="carousel-control-next"
-    type="button"
-    data-mdb-target="#carouselBasicExample"
-    data-mdb-slide="next"
-  >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<br>
-<!-- Carousel wrapper -->
-<div class="trending-wrapper">
-    <h3>Trending products</h3>
-  
+      <div class="carousel-inner">
         @foreach ($products as $item)
-            <!-- Single item -->
-            <div class="trending-item">
-                <a href="detail/{{$item['id']}}">
-                <img
-                  src="{{$item['gallery']}}"
-                  class="trending-img"
-                  //alt="..."
-                />
-                <div class=" ">
-                    <h5 >{{$item['name']}}</h5>
-                   
-                </div>
-                </a>
+          <div class="carousel-item {{$item['id']==1?'active':' '}}">
+            {{-- <a href="detail/{{$item['id']}}"> --}}
+              <div class="container">
+                  <div class="row p-5">
+                      <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                          <img class="img-fluid" src="{{$item['gallery']}}" alt="">
+                      </div>
+                      <div class="col-lg-6 mb-0 d-flex align-items-center">
+                          <div class="text-align-left align-self-center">
+                              <h1 class="h1 text-success">{{$item['name']}}</h1>
+                              <h3 class="h2">{{$item['description']}}</h3>
+                             
+                          </div>
+                      </div>
+                  </div>
               </div>
-     
-    @endforeach
-    
-      
-   
-</div>
-<br><br>
-</div>
+          </div>
+
+
+          @endforeach
+      </div>
+      <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+          <i class="fas fa-chevron-left"></i>
+      </a>
+      <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+          <i class="fas fa-chevron-right"></i>
+      </a>
+  </div>
+  <!-- End Banner Hero -->
+
+    <!-- Start Categories of The Month -->
+    <section class="container py-5">
+      <div class="row text-center pt-3">
+          <div class="col-lg-6 m-auto">
+              <h1 class="h1">Trending products</h1>
+          </div>
+      </div>
+      <div class="row">
+        @foreach ($products as $item)
+          <div class="col-12 col-md-4 p-5 mt-3">          
+              <a href="detail/{{$item['id']}}"><img src="{{$item['gallery']}}" class="rounded-circle img-fluid border"></a>
+              <h5 class="text-center mt-3 mb-3">{{$item['name']}}</h5>
+              <p class="text-center"><a href="detail/{{$item['id']}}" class="btn btn-success">Go Shop</a></p>
+          </div>
+          @endforeach
+
+      </div>
+  </section>
+  <!-- End Categories of The Month -->
+
+
+
 @endsection
